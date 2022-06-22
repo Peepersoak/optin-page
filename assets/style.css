@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #4b4b4b;
+}
+
+h1 {
+  font-size: 5em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #4b4b4b;
+  font-weight: 400;
+  margin: 30px 0px;
+}
+
+.background {
+  background-image: url("./img/background.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0px;
+  font-size: 14px;
+}
+
+.divider {
+  background: #1668ab;
+  height: 10px;
+  width: 50%;
+  margin: 30px auto;
+}
+
+.main-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 45%;
+  transform: translateX(-200px);
+}
+
+.main-wrapper h1 {
+  margin-bottom: 30px;
+}
+
+.btn {
+  color: #fff;
+  background-color: #1668ab;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  padding: 10px 100px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 10px 5px rgb(0 0 0 / 13%);
+  margin-bottom: 30px;
+}
+
+.btn:hover {
+  background-color: #204d74;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  padding: 30px;
+}
+
+footer p,
+footer a {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+footer a {
+  color: black;
+  text-decoration-line: none;
+}
+
+footer a:hover {
+  color: #02baf2;
+}
+
+footer > div {
+  margin: 0px 20px;
+}
+
+/*MODAL POPUP CSS*/
+.modal {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+  display: none;
+  overflow: auto;
+}
+
+.modal-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.modal.active {
+  opacity: 1;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.5s;
+  margin-top: -100px;
+}
+
+.modal.active .wrapper {
+  margin-top: 0px;
+}
+
+.content {
+  padding: 40px;
+}
+
+.wrapper p {
+  font-size: 14px;
+}
+
+.wrapper h2 {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 15px 0px;
+}
+
+.wrapper input,
+.wrapper button {
+  font-size: 16px;
+  padding: 15px;
+  width: 70%;
+  margin: 10px 0px;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.modal input:focus {
+  box-shadow: 0px 0px 15px rgb(22, 104, 171);
+  outline: none;
+  border: 1px solid rgb(22, 104, 171);
+}
+
+.wrapper button {
+  border: none;
+  background-color: rgb(22, 104, 171);
+  color: white;
+  font-size: 24px;
+}
+
+.wrapper button:hover {
+  background-color: #204d74;
+  cursor: pointer;
+}
+
+.wrapper .close {
+  position: absolute;
+  right: 0;
+  color: white;
+  background-color: #4b4b4b;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  padding: 10px;
+  transform: translate(20px, -20px);
+  transition: all 0.5s;
+}
+
+.wrapper .close:hover {
+  cursor: pointer;
+  background-color: #6c6c6c;
+}
+
+.wrapper .close > i {
+  font-size: 30px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-30px);
+}
+
+.input img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-wrapper {
+    width: 80%;
+    transform: none;
+  }
+  .btn {
+    padding: 15px;
+  }
+
+  .modal .wrapper {
+    width: 95%;
+  }
+  .content > img,
+  .modal input,
+  .modal button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main-wrapper h1 {
+    font-size: 50px;
+  }
+  .main-wrapper h2 {
+    font-size: 30px;
+  }
+  footer {
+    display: block;
+    text-align: center;
+    padding: 30px;
+  }
+  .modal .wrapper {
+    transform: translate(-50%, 0);
+    margin-top: 30px !important;
+    top: 0;
+  }
+  .modal-bg {
+    height: 160%;
+  }
+  .input {
+    transform: none;
+  }
+
+  .input img {
+    display: none;
+  }
+}
